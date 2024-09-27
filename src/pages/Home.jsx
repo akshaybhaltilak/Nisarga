@@ -1,6 +1,9 @@
 import React from 'react';
 import About from './AboutUs';
 import PlantsSection from './Plants';
+import Services from './Services';
+import Gallery from './Gallery';
+import Contact from './Contact';
 
 const Home = () => {
   const images = [
@@ -29,12 +32,12 @@ const Home = () => {
   return (
     <>
     <div
-      className="h-screen bg-cover bg-center flex items-center justify-center pt-24 mt-10 md:bg-[url('https://media.istockphoto.com/id/609821752/photo/gardeners-working-in-a-greenhouse.jpg?s=612x612&w=0&k=20&c=pJgCp6PrWgGrhnYOblGMy2I_o3PNwg4w9LCUig0pA6A=')] bg-green-100"
+      className="h-screen bg-cover bg-center flex items-center justify-center pt-24 mt-10 md:bg-[url('https://images.pexels.com/photos/2886937/pexels-photo-2886937.jpeg?auto=compress&cs=tinysrgb&w=600')] bg-green-100"
     >
       <div className="bg-white bg-opacity-80 p-8 rounded-lg shadow-lg max-w-4xl mx-4 text-center">
         {/* Heading with responsive text size */}
         <h1 className="text-4xl md:text-5xl font-bold text-green-800 leading-tight">
-          Welcome to Nisarga Plant Nursery
+          Welcome to Nisarg Plant Nursery
         </h1>
         <p className="mt-4 text-base md:text-lg text-green-700">
           We nurture nature to nurture you!
@@ -70,6 +73,9 @@ const Home = () => {
     </div>
     <About />
     <PlantsSection />
+    <Services/>
+    <Gallery/>
+    <Contact/>
     </>
   );
 };

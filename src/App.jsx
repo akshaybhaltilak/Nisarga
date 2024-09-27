@@ -8,6 +8,10 @@ import Plants from './pages/Plants';
 import Navbar from './components/Navbar';
 import './App.css'
 import Footer from './components/Footer';
+import Services from './pages/Services';
+import Gallery from './pages/Gallery';
+import Contact from './pages/Contact';
+
 
 
 // Import other components
@@ -20,9 +24,13 @@ function App() {
    
       <Routes>
         <Route path="/" element={<Home/>} />
-        {/* <Route path="/about" element={<AboutUs />} />
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/plants" element={<Plants />} />
-        Add routes for other pages */}
+        <Route path="/services" element={<Services/>} />
+        <Route path="/gallery" element={<Gallery/>} />
+        <Route path="/contact" element={<Contact/>} />
+       
+        {/* Add routes for other pages */}
       </Routes>
     
       <Footer/>

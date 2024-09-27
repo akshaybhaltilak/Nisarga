@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo with RGB Effect */}
         <h1 className="text-2xl font-bold text-white hover:text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-green-500 to-blue-500 transition duration-300 ease-in-out">
-          Nisarga
+          Nisarg
         </h1>
 
         {/* Desktop Menu */}
