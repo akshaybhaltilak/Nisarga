@@ -1,173 +1,119 @@
-// import React from 'react';
-// import About from './AboutUs';
-// import PlantsSection from './Plants';
-// import Services from './Services';
-// import Gallery from './Gallery';
-// import Contact from './Contact';
-
-// const Home = () => {
-//   const images = [
-//     {
-//       src: "/src/assets/fruit.jpg",
-//       alt: "Indoor Plant",
-//       title: "Indoor Plant"
-//     },
-//     {
-//       src: "/src/assets/fruit1.jpg",
-//       alt: "Outdoor Plant",
-//       title: "Outdoor Plant"
-//     },
-//     {
-//       src: "/src/assets/mango.jpg",
-//       alt: "Succulent Plant",
-//       title: "Succulent Plant"
-//     },
-//     {
-//       src: "/src/assets/more.jpg",
-//       alt: "Flowering Plant",
-//       title: "Flowering Plant"
-//     },
-//   ];
-
-//   return (
-//     <>
-//     <div
-//       className="h-screen bg-cover bg-center flex items-center justify-center pt-24 mt-10 md:bg-[url('https://images.pexels.com/photos/2886937/pexels-photo-2886937.jpeg?auto=compress&cs=tinysrgb&w=600')] bg-green-100"
-//     >
-//       <div className="bg-white bg-opacity-80 p-8 rounded-lg shadow-lg max-w-4xl mx-4 text-center">
-//         {/* Heading with responsive text size */}
-//         <h1 className="text-4xl md:text-5xl font-bold text-green-800 leading-tight">
-//           Welcome to Nisarg Nursery  AK.
-//         </h1>
-//         <p className="mt-4 text-base md:text-lg text-green-700">
-//           We nurture nature to nurture you!
-//         </p>
-
-//         {/* Responsive Buttons */}
-//         <div className="mt-8 flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0 items-center">
-//           <button className="px-6 py-2 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-600 transition duration-300">
-//             Explore More
-//           </button>
-//           <button className="px-6 py-2 bg-white text-green-700 border border-green-700 font-semibold rounded-lg hover:bg-green-100 transition duration-300">
-//             Contact Us
-//           </button>
-//         </div>
-
-//         {/* Responsive Plant Images Grid */}
-//         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
-//           {images.map((image) => (
-//             <div className="relative group" key={image.alt}>
-//               <img
-//                 src={image.src}
-//                 alt={image.alt}
-//                 className="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
-//               />
-//               {/* Tooltip Overlay */}
-//               <div className="absolute inset-0 bg-black bg-opacity-60 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-//                 <span className="text-lg">{image.title}</span>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//     <About />
-//     <PlantsSection />
-//     <Services/>
-//     <Gallery/>
-//     <Contact/>
-//     </>
-//   );
-// };
-
-// export default Home;
-
 import React from 'react';
 import About from './AboutUs';
 import PlantsSection from './Plants';
 import Services from './Services';
 import Gallery from './Gallery';
 import Contact from './Contact';
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion'; // Import motion for animations
 
 const Home = () => {
-  const images = [
-    {
-      src: "/src/assets/fruit.jpg",
-      alt: "Indoor Plant",
-      title: "Indoor Plant"
-    },
-    {
-      src: "/src/assets/fruit1.jpg",
-      alt: "Outdoor Plant",
-      title: "Outdoor Plant"
-    },
-    {
-      src: "/src/assets/mango.jpg",
-      alt: "Succulent Plant",
-      title: "Succulent Plant"
-    },
-    {
-      src: "/src/assets/more.jpg",
-      alt: "Flowering Plant",
-      title: "Flowering Plant"
-    },
-  ];
+    const images = [
+        {
+            src: "https://nisarg-nursery-images-folder.vercel.app/images/img%20(67).jpg",
+            heading: "Farm Management",
+            description: "Expert guidance and services to manage your farming needs."
+        },
+        {
+            src: "https://nisarg-nursery-images-folder.vercel.app/images/img%20(65).jpg",
+            heading: "Plant Consultation",
+            description: "Personalized consultations to help you choose the right plants."
+        },
+        {
+            src: "https://nisarg-nursery-images-folder.vercel.app/images/img%20(31).jpg",
+            heading: "Landscape Design",
+            description: "Transform your outdoor spaces with our design services."
+        },
+        {
+            src: "https://nisarg-nursery-images-folder.vercel.app/images/img%20(47).jpg",
+            heading: "Garden Maintenance",
+            description: "Keep your garden healthy and vibrant with our maintenance services."
+        },
+        {
+            src: "https://nisarg-nursery-images-folder.vercel.app/images/img%20(93).jpg",
+            heading: "Sustainable Practices",
+            description: "Promoting eco-friendly farming practices for a greener future."
+        },
 
-  return (
-    <>
-      {/* Hero Section with adjusted background image */}
-      <div
-        className="min-h-screen bg-cover bg-center flex flex-col items-center justify-center pt-24 md:pt-32 bg-green-100"
-        // style={{ backgroundImage: `url('https://images.pexels.com/photos/2886937/pexels-photo-2886937.jpeg?auto=compress&cs=tinysrgb&w=600')` }}
-      >
-        <div className="bg-white bg-opacity-80 p-8 rounded-lg shadow-lg max-w-4xl mx-4 text-center">
-          {/* Heading with responsive text size */}
-          <h1 className="text-3xl md:text-5xl font-bold text-green-800 leading-tight">
-            Welcome to Nisarg Nursery AK.
-          </h1>
-          <p className="mt-4 text-base md:text-lg text-green-700">
-            We nurture nature to nurture you!
-          </p>
+        {
+          src: "https://nisarg-nursery-images-folder.vercel.app/images/img%20(17).jpg",
+          heading: "Event Management",
+          description: "Event management involves planning, organizing, and executing events such as weddings, corporate meetings, parties, and other programs, ensuring everything runs smoothly and meets client expectations."
+      },
+    ];
+  
+    const [currentImage, setCurrentImage] = useState(0);
+  
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
+        }, 2000); // Change image every 2 seconds
+  
+        return () => clearInterval(intervalId); // Cleanup interval on unmount
+    }, [images.length]);
 
-          {/* Responsive Buttons */}
-          <div className="mt-8 flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0 items-center">
-            <button className="px-6 py-2 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-600 transition duration-300">
-              Explore More
-            </button>
-            <button className="px-6 py-2 bg-white text-green-700 border border-green-700 font-semibold rounded-lg hover:bg-green-100 transition duration-300">
-              Contact Us
-            </button>
-          </div>
-        </div>
+    return (
+        <>
+            {/* Hero section */}
+            <div className="w-full mt-14 text-left px-8">
+                {/* Hero Section */}
+                <div className="relative w-full" id="home">
+                    <div className="mx-auto">
+                        <div className="flex flex-col justify-center py-8">
+                            <div className="mt-6 flex max-w-max items-center space-x-2 rounded-full border p-2 bg-green-50">
+                                <p className="text-xs font-medium md:text-sm">
+                                    Bringing Nature to Your Doorstep.
+                                    <span className="ml-2 cursor-pointer font-bold">Explore Now &rarr;</span>
+                                </p>
+                            </div>
+                            <h1 className="mt-6 max-w-4xl text-2xl font-bold tracking-tight text-green-900 md:text-3xl lg:text-5xl">
+                                Transform Your Space with Beautiful Plants from Nisarg Nursery
+                            </h1>
+                            <div className="mt-6">
+                                <button
+                                    type="button"
+                                    className="rounded-md bg-green-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                                >
+                                    Discover More
+                                </button>
+                            </div>
+                        </div>
 
-        {/* Responsive Plant Images Grid with proper margin */}
-        <div className="mt-16 md:mt-24 px-4 md:px-0 w-full max-w-5xl">
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            {images.map((image) => (
-              <div className="relative group" key={image.alt}>
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
-                />
-                {/* Tooltip Overlay */}
-                <div className="absolute inset-0 bg-black bg-opacity-60 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-sm sm:text-lg">{image.title}</span>
+                        {/* Image Carousel with Overlay Text */}
+                        <div className="rounded-lg">
+                            <div className="relative h-[400px] overflow-hidden rounded-lg">
+                                {images.map((image, index) => (
+                                    <motion.div
+                                        key={index}
+                                        className={`absolute inset-0 w-full h-full rounded-lg bg-gray-50 ${currentImage === index ? 'opacity-100' : 'opacity-0'}`}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: currentImage === index ? 1 : 0 }}
+                                        transition={{ duration: 0.5 }} // Duration of fade effect
+                                    >
+                                        <img
+                                            className="absolute inset-0 w-full h-full rounded-lg object-cover"
+                                            src={image.src}
+                                            alt={`Nisarg Nursery Plants ${index + 1}`}
+                                        />
+                                        <div className="absolute bottom-10 left-4 right-4 text-center bg-black bg-opacity-50 rounded-md p-4">
+                                            <h2 className="text-xl font-bold text-white">{image.heading}</h2>
+                                            <p className="mt-2 text-sm text-white">{image.description}</p>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+            </div>
 
-      {/* Other sections */}
-      <About />
-      <PlantsSection />
-      <Services />
-      <Gallery />
-      <Contact />
-    </>
-  );
+            <About />
+            <PlantsSection />
+            <Services />
+            <Gallery />
+            <Contact />
+        </>
+    );
 };
 
 export default Home;

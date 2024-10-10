@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // For navigation
 
 const plantsData = [
   { name: 'Indoor & Outdoor', imgSrc: 'http://www.nisarganursery.com/images/plant/indoor.jpg' },
@@ -16,24 +17,46 @@ const plantsData = [
 ];
 
 const PlantsSection = () => {
+  const navigate = useNavigate();
+
+  const handleImageClick = () => {
+    navigate('/gallery');
+  };
+
   return (
-    <section className="py-16 bg-gray-100 mt-10">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-10 text-green-700">Our Plants Collection</h2>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {plantsData.map((plant, index) => (
-            <div key={index} className="relative bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-              <img 
-                src={plant.imgSrc} 
-                alt={plant.name} 
-                className="w-full h-64 object-cover" 
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex justify-center items-center">
-                <h3 className="text-white text-xl font-semibold">{plant.name}</h3>
+    <section className="py-8  mt-4 rounded-lg px-8" id='plants'>
+      <div className="mb-4 flex max-w-max items-center space-x-2 rounded-full border p-2 bg-green-50">
+        <p className="text-xs font-medium md:text-sm">
+          Learn More About Us
+          <span className="ml-2 cursor-pointer font-bold">Explore Now &rarr;</span>
+        </p>
+      </div>
+
+      <div className="container mx-auto">
+        <h2 className="text-2xl font-bold text-left mb-10 text-green-800">Our Plants Collection</h2>
+
+        {/* Horizontal scroll on mobile */}
+        <div className="overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-green-600 scrollbar-track-gray-200 rounded scrollbar-thumb-rounded-full scrollbar-track-rounded-full">
+          <div className="flex space-x-4">
+            {plantsData.map((plant, index) => (
+              <div
+                key={index}
+                onClick={handleImageClick}
+                className="min-w-[250px] sm:min-w-[300px] bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+              >
+                <img
+                  src={plant.imgSrc}
+                  alt={plant.name}
+                  className="w-full h-48 object-cover"
+                />
+                {/* Text below plant card */}
+                <div className="p-4">
+                  <h3 className="text-green-700 text-lg font-semibold">{plant.name}</h3>
+                  <p className="text-md text-gray-600 mt-2">Explore {plant.name} in detail.</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

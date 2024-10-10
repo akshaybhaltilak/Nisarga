@@ -1,12 +1,11 @@
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer
-      className="bg-gradient-to-r from-white via-green-100 to-green-500 py-8 mt-10 text-gray-800 px-8"
-    >
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+    <footer className="bg-white text-black px-8 py-12 w-full">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left px-8">
+        
         {/* Address Section */}
         <div>
           <h3 className="font-semibold text-lg mb-3">Address</h3>
@@ -31,38 +30,51 @@ const Footer = () => {
 
         {/* Social Section */}
         <div>
-          <h3 className="font-semibold text-lg mb-3">Social</h3>
+          <h3 className="font-semibold text-lg mb-3">Follow Us</h3>
           <div className="flex justify-center md:justify-start space-x-4">
-            <a href="https://facebook.com" className="bg-green-400 p-3 rounded-full hover:bg-green-500 transition duration-300">
-              <FaFacebookF />
+            <a
+              href="https://www.facebook.com/profile.php?id=100010485395594&mibextid=ZbWKwL"
+              className="bg-gray-200 p-3 rounded-full hover:bg-gray-300 transition duration-300"
+            >
+              <FaFacebookF className="text-black" />
             </a>
-            <a href="https://twitter.com" className="bg-green-400 p-3 rounded-full hover:bg-green-500 transition duration-300">
-              <FaTwitter />
+            <a
+              href="https://www.instagram.com/nisargnursery11/"
+              className="bg-gray-200 p-3 rounded-full hover:bg-gray-300 transition duration-300"
+            >
+              <FaInstagram className="text-black" />
             </a>
-            <a href="https://linkedin.com" className="bg-green-400 p-3 rounded-full hover:bg-green-500 transition duration-300">
-              <FaLinkedinIn />
+            <a
+              href="https://wa.me/919767662367
+"
+              className="bg-gray-200 p-3 rounded-full hover:bg-gray-300 transition duration-300"
+            >
+              <FaWhatsapp className="text-black" />
             </a>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto mt-8 border-t border-gray-300 pt-4 text-sm flex flex-col md:flex-row justify-between items-center">
+      <div className="flex flex-col md:flex-row justify-between items-center mx-auto px-8 mt-8">
         <div className="flex items-center space-x-2">
           <img src="/src/assets/logo.png" alt="Logo" className="h-8" />
-          <p>All Rights Reserved by Nisarg Nursery.</p>
+          <p className="text-gray-500">© 2024 Nisarg Nursery. All Rights Reserved.</p>
         </div>
-        <div className="flex space-x-4 mt-4 md:mt-0">
-          <a href="#" className="hover:underline">Terms of Use</a>
-          <a href="#" className="hover:underline">Legal Disclaimer</a>
-          <a href="#" className="hover:underline">Privacy Policy</a>
+        <div className="flex space-x-4 mt-4 md:mt-0 text-gray-500">
+          <a href="#" className="hover:text-black hover:underline transition duration-300">Terms of Use</a>
+          <a href="#" className="hover:text-black hover:underline transition duration-300">Privacy Policy</a>
+          <a href="#" className="hover:text-black hover:underline transition duration-300">Legal Disclaimer</a>
         </div>
       </div>
 
       {/* Scroll to top button */}
       <div className="fixed bottom-8 right-8">
-        <a href="#top" className="bg-green-400 p-3 rounded-full text-white hover:bg-green-500 transition duration-300">
+        {/* <a
+          href="#top"
+          className="bg-gray-200 p-3 rounded-full text-black hover:bg-gray-300 transition duration-300 shadow-lg"
+        >
           ⬆
-        </a>
+        </a> */}
       </div>
     </footer>
   );
